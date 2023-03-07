@@ -1,15 +1,9 @@
-import Cards from "./components/Cards"
-import Carousel from "./components/Carousel"
-import Footer from "./components/Footer"
-import Header from "./components/Header"
+import Main from "./hooks/useState/Main"
 
 function App() {
     return (
         <>
-            <Header />
-            <Carousel />
-            <Cards />
-            <Footer />
+            <Main />
         </>
     )
 }
