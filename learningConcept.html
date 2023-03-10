@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
+
+        let obj = {
+            firstName: 'rahul',
+            birthYear: 2000,
+            sports: 'Volleyball'
+        }
+
+        obj = {
+            ...obj,
+            firstName: 'karan'
+        }
+
+        console.log(obj)
+
+        // let num1 = 10
+        // let num2 = 20
+
+        // num1 > num2 ? console.log("number 1 is greater then num2") : console.log("number2 is greater then num1")
+
+        // let canDrive = true
+
+        // canDrive ? console.log("yes he can drive") : console.log("no....")
+
+        // if (canDrive) {
+        //     console.log("Yes he can!")
+        // } else {
+        //     console.log("No...")
+        // }
 
         // let obj = {
         //     firstName: 'parth',
@@ -16,7 +46,7 @@
 
         // console.log(obj.firstName)
 
-        // const { firstName, lastName } = obj 
+        // const { firstName, lastName } = obj
 
         // let array = [10, 20, 30, 40]
 
@@ -25,7 +55,7 @@
 
         // // console.log(a, b)
 
-        // const [ a, b ] = array 
+        // const [ a, b ] = array
         // console.log(a, b)
 
         // function message() {
@@ -36,9 +66,10 @@
 
         // }
 
-        // const [valueOne, valueTwo] = message() 
+        // const [valueOne, valueTwo] = message()
         // console.log(valueOne, valueTwo)
 
     </script>
 </body>
+
 </html>
