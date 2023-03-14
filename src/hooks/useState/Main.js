@@ -68,8 +68,9 @@ function Main() {
       <h1 className="text-center py-5">Use State</h1>
 
       <div className="card mb-5">
-        <div className="card-header">
+        <div className="card-header d-flex justify-content-between">
           <h2>Object Example</h2>
+          <button>Dark mode</button>
         </div>
         <div className="card-body">
           <h4>My name is: {personData.firstName} </h4>

@@ -1,6 +1,6 @@
 import './header.css'
 
-const Header = () => {
+const Header = (props) => {
   // JSX => Javascript extension (it's use bebal compiler)
 
   let data = "hello world";
@@ -16,6 +16,7 @@ const Header = () => {
       <nav className="navbar bg-body-tertiary">
         <div className="container-fluid">
             <a className="navbar-brand">Navbar</a>
+            <h4>You total item i</h4>
             <form className="d-flex" role="search">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit">Search</button>
