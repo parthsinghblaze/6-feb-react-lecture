@@ -1,9 +1,9 @@
-import Main from "./props/Main"
+import ImageList from "./imageWithProps/ImageList"
 
 function App() {
     return (
         <>
-            <Main />
+            <ImageList />
         </>
     )
 }
