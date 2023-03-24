@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let products = ["apple", "banana", "mango"]
+        let objectData = {
+            firstName: "rupa"
+        }
+
+        // let will store any type of data as a string
+        localStorage.setItem("productList", JSON.stringify(products));
+
+        let productList = localStorage.getItem("productList")
+        
+        // to get the proper datatype of the localstorage you can use JSON.parse()
+        console.log("product list", JSON.parse(productList))
+
+    </script>
+</body>
+</html>

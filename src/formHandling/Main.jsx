@@ -1,5 +1,15 @@
 import React, { useState } from "react";
 
+function getLocalStorageData() {
+  let userData = localStorage.getItem("data");
+
+  if (userData) {
+    return JSON.parse(userData);
+  } else {
+    return [];
+  }
+}
+
 function Main() {
   // 1 => create a state
   // 2 => add value attribute to the input
@@ -10,7 +20,7 @@ function Main() {
   const [city, setCity] = useState("");
 
   // adding an table array state
-  const [tableData, setTableData] = useState([]);
+  const [tableData, setTableData] = useState(getLocalStorageData());
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -28,9 +38,11 @@ function Main() {
     setFirstName("");
     setLastName("");
     setCity("");
-  }
 
-  console.log("table data", tableData);
+    // storing data in our local storage
+
+    localStorage.setItem("data", JSON.stringify([...tableData, formData]));
+  }
 
   return (
     <>

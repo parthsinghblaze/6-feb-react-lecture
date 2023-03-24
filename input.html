@@ -1,26 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
+  <body>
+    <script>
+      // localStorage.setItem("userName", "parth")
 
-<body>
-	<form action="">
-		<input type="text">
-		<button onclick="getValueOfInput()">Get</button>
-	</form>
+      // const myName = localStorage.getItem("userName")
 
-	<script>
-		let input = document.querySelector('input')
-		function getValueOfInput(event) {
-			console.log(event)
-			// console.log(input.value)
-		}
-	</script>
-</body>
+      // console.log(myName)
+    </script>
 
+    <form action="">
+      <input type="text" />
+      <button onclick="getValueOfInput()">Login</button>
+    </form>
+
+    <button onclick="logout()">Logout</button>
+
+    <h1></h1>
+
+    <script>
+      let input = document.querySelector("input");
+
+      function getUser() {
+        const user = localStorage.getItem("user");
+        const info = document.querySelector("h1");
+        if (user) {
+          info.innerHTML = `Welcome, ${user}`;
+        } else {
+          info.innerHTML = `Please login`;
+        }
+      }
+
+      function getValueOfInput(event) {
+        let userName = input.value;
+        localStorage.setItem("user", userName);
+        getUser();
+      }
+
+      function logout() {
+        localStorage.removeItem("user");
+		getUser()
+      }
+
+      getUser();
+    </script>
+  </body>
 </html>
