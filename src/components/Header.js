@@ -1,4 +1,5 @@
-import './header.css'
+import { useContext } from "react";
+import { CocktailWrapper } from "../App";
 
 const Header = () => {
   // JSX => Javascript extension (it's use bebal compiler)
@@ -11,36 +12,19 @@ const Header = () => {
         backgroundColor: 'green'
     }
 
+  const { drinkName, setDrinkName } =  useContext(CocktailWrapper)
+
   return (
     <>
       <nav className="navbar bg-body-tertiary">
         <div className="container-fluid">
             <a className="navbar-brand">Navbar</a>
             <form className="d-flex" role="search">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <input value={drinkName} className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e) => setDrinkName(e.target.value)} />
             <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
     </nav>
-
-
-        {/* <div>
-          <h1>Adding CSS to the JSX</h1>
-          <h2
-            style={{
-              color: "red",
-              backgroundColor: "black",
-            }}
-          >
-            Let's Apply CSS (in inline css)
-          </h2>
-          <h2 style={internalCSSObject}>internal CSS</h2>
-          <h2 className='externalClass'>I am external CSS</h2>
-        </div>
-
-        <h1>Just adding JS variable in JSX {data} </h1>
-        <h2>Hello world</h2> */}
-      
     </>
   );
 };
