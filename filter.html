@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let number = [3,5,7,8,22,44]
+        let selectedNumber =  5
+
+        // const filterData = number.filter((item) => item === selectedNumber)
+        // console.log('filter data', filterData)
+
+        let editData = number.map((item) => {
+            if(item == selectedNumber) {
+                return 100
+            } else {
+                return item
+            }
+        })
+
+        console.log(editData)
+
+    </script>
+</body>
+</html>
