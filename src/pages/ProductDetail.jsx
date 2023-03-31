@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { productList } from "../productList";
 
 function ProductDetail() {
@@ -7,9 +7,11 @@ function ProductDetail() {
   const { id } = myProductId;
   const [productDetail, setProductDetail] = useState({});
 
+  const data = useLocation();
+  const { state } = data;
   useEffect(() => {
-    const findProduct = productList.find((item) => item.id === Number(id));
-    setProductDetail(findProduct);
+    // const findProduct = productList.find((item) => item.id === Number(id));
+    setProductDetail(state);
   }, []);
 
   return (
