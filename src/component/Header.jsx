@@ -1,7 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useNavigate, NavLink } from "react-router-dom";
+import { LoginWrapper } from "../App";
 
 function Header() {
+  const { isLogin, setIsLogin, cart } = useContext(LoginWrapper);
+
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    setIsLogin(false);
+    localStorage.removeItem("isLogin");
+    navigate("/");
+  }
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -22,27 +33,41 @@ function Header() {
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link to="/" className="nav-link active" aria-current="page">
+              <NavLink to="/" className="nav-link" aria-current="page">
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link to="/gallery" className="nav-link">
+              <NavLink to="/gallery" className="nav-link">
                 Gallery
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link to="/cocktail-drinks" className="nav-link">
+              <NavLink to="/cocktail-drinks" className="nav-link">
                 Drinks
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link to="/product" className="nav-link">
+              <NavLink to="/product" className="nav-link">
                 Products
-              </Link>
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to="/cart" className="nav-link">
+                Cart <span className="badge bg-danger">{cart.length}</span>
+              </NavLink>
             </li>
           </ul>
         </div>
+        {isLogin ? (
+          <button className="btn btn-danger" onClick={() => handleLogout()}>
+            Logout
+          </button>
+        ) : (
+          <NavLink className="nav-link" to="/login">
+            Login
+          </NavLink>
+        )}
       </div>
     </nav>
   );
