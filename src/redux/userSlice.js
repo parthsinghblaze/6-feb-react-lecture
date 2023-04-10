@@ -7,9 +7,9 @@ const userSlice = createSlice({
         lastName: "Singh"
     },
     reducers: {
-        changeFirstName: (state) => {
-            state.firstName = "XYZ"
-            state.lastName = "ABC"
+        changeFirstName: (state, action) => {
+            state.firstName = action.payload.firstName
+            state.lastName = action.payload.lastName
         }
     }
 })

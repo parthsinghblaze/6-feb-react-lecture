@@ -8,12 +8,14 @@ export const numberSlice = createSlice({
         number: 0
     },
     reducers: {
-        increment: (state) => {
-            state.number = state.number + 1
+        increment: (state, action) => {
+            console.log('action', action)
+            state.number = state.number + Number(action.payload)
         },
-        decrement: (state) => {
+        decrement: (state, action) => {
+            console.log('action', action)
             if(state.number > 0) {
-                state.number = state.number - 1
+                state.number = state.number - Number(action.payload)
             }
         }
     }

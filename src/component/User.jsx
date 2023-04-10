@@ -12,7 +12,13 @@ function User() {
       <h3>
         {firstName} {lastName}
       </h3>
-      <button onClick={() => dispatch(changeFirstName())}>Change</button>
+      <button
+        onClick={() =>
+          dispatch(changeFirstName({ firstName: "parth", lastName: "singh" }))
+        }
+      >
+        Change
+      </button>
     </div>
   );
 }
