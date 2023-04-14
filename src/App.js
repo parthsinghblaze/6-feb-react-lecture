@@ -1,10 +1,21 @@
+import { Alert } from 'react-bootstrap'
 import React from 'react'
+import Layout from './commonComponent/Layout'
+import { Routes, Route } from 'react-router-dom'
+import Dashboard from './pages/Dashboard'
+import AddProducts from './pages/AddProducts'
 
 function App() {
   return (
-    <div className='container'>
-      <h2>Master</h2>
-    </div>
+    <Layout>
+      <Routes>
+        <Route path='/' element={<Dashboard />} />
+        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/add-products' element={<AddProducts />} />
+        <Route path='/all-products' element={<h1>All Products</h1>} />
+      </Routes>
+    </Layout>
+
   )
 }
 
