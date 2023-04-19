@@ -7,18 +7,45 @@ function SideBar() {
   return (
     <div className="bg-dark text-white" style={{ height: "100vh" }}>
       <h3 className="text-center py-4">Admin</h3>
-      <ListGroup>
+      <ul className="list-group">
         {navLink.map((item) => {
-          const { id, title, link } = item;
+          const { id, title, link, subItem } = item;
           return (
-            <ListGroup.Item className="bg-dark text-white">
-              <NavLink className="nav-link w-100" to={link}>
-                {title}
-              </NavLink>
-            </ListGroup.Item>
+            <>
+              <li className="list-group-item bg-dark text-white">
+                {subItem.length > 0 && (
+                  <NavLink
+                    className="nav-link w-100"
+                    to={link}
+                    data-bs-toggle="collapse"
+                    data-bs-target={`#${id}`}
+                  >
+                    {title}
+                  </NavLink>
+                )}
+                {subItem.length === 0 && (
+                  <NavLink className="nav-link w-100" to={link}>
+                    {title}
+                  </NavLink>
+                )}
+
+                <div className="collapse" id={id}>
+                  {subItem.map((item) => {
+                    const { title } = item;
+                    return (
+                      <li className="list-group-item bg-dark text-white">
+                        <NavLink className="nav-link w-100" to={link}>
+                          {title}
+                        </NavLink>
+                      </li>
+                    );
+                  })}
+                </div>
+              </li>
+            </>
           );
         })}
-      </ListGroup>
+      </ul>
     </div>
   );
 }
