@@ -1,0 +1,7 @@
+.error{
+    border: 1px solid red!important;
+}
+
+.error:focus{
+    box-shadow: 0 0 4px red!important;
+}

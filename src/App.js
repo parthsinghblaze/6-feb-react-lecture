@@ -4,6 +4,7 @@ import Layout from './commonComponent/Layout'
 import { Routes, Route } from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
 import AddProducts from './pages/AddProducts'
+import './style.css';
 
 function App() {
   return (

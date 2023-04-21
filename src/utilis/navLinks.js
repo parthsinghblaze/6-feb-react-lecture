@@ -6,10 +6,14 @@ export const navLink = [
         subItem: [
             {
                 id: 1,
-                title: 'Dashboard',
+                title: 'Search Emp',
                 link: '/dashboard',
             },
-           
+            {
+                id: 2,
+                title: 'View Live Status',
+                link: '/dashboard',
+            },
         ]
     },
     {
