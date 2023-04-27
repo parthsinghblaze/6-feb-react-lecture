@@ -2,10 +2,20 @@ import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import { navLink } from "../utilis/navLinks";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { closeMenu } from "../redux/menuSlice";
 
 function SideBar() {
+  const dispatch = useDispatch();
+
   return (
-    <div className="bg-dark text-white" style={{ height: "100vh" }}>
+    <div
+      className="bg-dark text-white"
+      style={{ minHeight: "100vh", height: "100%" }}
+    >
+      <div className="d-flex justify-content-end p-3">
+        <button onClick={() => dispatch(closeMenu())}>Close</button>
+      </div>
       <h3 className="text-center py-4">Admin</h3>
       <ul className="list-group">
         {navLink.map((item, index) => {

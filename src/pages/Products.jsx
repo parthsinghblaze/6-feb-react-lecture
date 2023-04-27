@@ -1,12 +1,15 @@
 import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
-import { getAllProducts } from "../redux/productSlice";
+import { getAllProducts, deleteProduct } from "../redux/productSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Products() {
   const dispatch = useDispatch();
   const { loading, productList } = useSelector((state) => state.product);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getAllProducts());
@@ -41,8 +44,20 @@ function Products() {
                   <td>{price}</td>
                   <td>{qty}</td>
                   <td>
-                    <button className="btn btn-danger">Delete</button>
-                    <button className="btn btn-warning mx-3">Edit</button>
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => dispatch(deleteProduct(_id))}
+                    >
+                      Delete
+                    </button>
+                    <button
+                      className="btn btn-warning mx-3"
+                      onClick={() =>
+                        navigate(`/edit-product/${name}`, { state: item })
+                      }
+                    >
+                      Edit
+                    </button>
                   </td>
                 </tr>
               );
