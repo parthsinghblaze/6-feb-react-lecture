@@ -8,17 +8,20 @@ import Products from "./pages/Products";
 import "./style.css";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import Private from "./commonComponent/Private";
+import Login from "./pages/Login";
 
 function App() {
   return (
     <Provider store={store}>
       <Layout>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/add-products" element={<AddProducts />} />
-          <Route path="/all-products" element={<Products />} />
-          <Route path="/edit-product/:name" element={<AddProducts />} />
+            <Route path="/" element={<Private><Dashboard /></Private> } />
+            <Route path="/dashboard" element={ <Private> <Dashboard /></Private>} />
+            <Route path="/add-products" element={<Private><AddProducts /></Private>} />
+            <Route path="/all-products" element={<Private><Products /></Private>} />
+            <Route path="/edit-product/:name" element={<Private><AddProducts /></Private>} />
+            <Route path="/login" element={<Login />} />
         </Routes>
       </Layout>
     </Provider>

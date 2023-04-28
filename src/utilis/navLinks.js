@@ -4,16 +4,16 @@ export const navLink = [
         title: 'Dashboard',
         link: '/dashboard',
         subItem: [
-            {
-                id: 1,
-                title: 'Search Emp',
-                link: '/dashboard',
-            },
-            {
-                id: 2,
-                title: 'View Live Status',
-                link: '/dashboard',
-            },
+            // {
+            //     id: 1,
+            //     title: 'Search Emp',
+            //     link: '/dashboard',
+            // },
+            // {
+            //     id: 2,
+            //     title: 'View Live Status',
+            //     link: '/dashboard',
+            // },
         ]
     },
     {
