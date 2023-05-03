@@ -4,6 +4,7 @@ import { navLink } from "../utilis/navLinks";
 import { NavLink, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { closeMenu } from "../redux/menuSlice";
+import { CustomButton } from "./Header";
 
 function SideBar() {
   const dispatch = useDispatch();
@@ -20,7 +21,9 @@ function SideBar() {
       style={{ minHeight: "100vh", height: "100%" }}
     >
       <div className="d-flex d-lg-none justify-content-end p-3">
-        <button onClick={() => dispatch(closeMenu())}>Close</button>
+        <CustomButton color="yellow" onClick={() => dispatch(closeMenu())}>
+          Close
+        </CustomButton>
       </div>
       <h3 className="text-center py-4">Admin</h3>
       <ul className="list-group">
