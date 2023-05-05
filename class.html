@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Classes in JS</h1>
+    <script>
+
+        // let student1 = {
+        //     firstName: "parth",
+        //     course: "Front-end",
+        //     display: () => console.log(student1.firstName, student1.course)
+        // }
+
+        // let student2 = {
+        //     firstName: "Krupali",
+        //     course: "Full-stack",
+        //     display: () => console.log(student2.firstName, student2.course)
+        // }
+
+        // student1.display()
+
+        class ClassRoom {
+            constructor(studentName, course) {
+                this.firstName = studentName 
+                this.course = course
+            }
+
+            displayDetails() {
+                console.log(`My name is ${this.firstName} and i am learning ${this.course}`);
+            }
+        }
+
+        class SportStudent extends ClassRoom {
+            constructor (studentName, course, sport) {
+                super(studentName, course)
+                this.sport = sport 
+            }
+
+            sportDetails() {
+                console.log(`My name is ${this.firstName} and i play ${this.sport}`);
+            }
+
+        }
+
+        const sportStudent = new SportStudent("Rahul", "Full-stack", "Volleyball");
+        sportStudent.sportDetails();
+        sportStudent.displayDetails();
+        // const student1 = new ClassRoom("krupali", "Full-Stack");
+        // const student2 = new ClassRoom("Rahul", "Full-Stack");
+        // student1.displayDetails()
+
+
+
+    </script>
+</body>
+</html>
