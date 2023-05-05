@@ -1,9 +1,10 @@
 import React from 'react'
+import Memo from './component/Memo'
 
 function App() {
   return (
     <div className='container'>
-      <h2>Master</h2>
+      <Memo />
     </div>
   )
 }
